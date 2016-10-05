@@ -1,0 +1,23 @@
+<div class="main_title">Master Key Password Generator</div>
+<div class="input_form">
+  <%= form_tag(method: "post") do %>
+    <div class="input_fields">
+      <%= label_tag(:service, "Website/Service Name:") %>
+      <%= text_field_tag(:service, @service, placeholder: 'facebook.com, gmail.com', :required => true) %><br><br>
+      <%= label_tag(:email, "Email address:") %>
+      <%= text_field_tag(:email, @email, placeholder: 'spambot@yahoo.com', :required => true) %><br><br>
+      <%= label_tag(:master_key, "Master key:") %>
+      <%= password_field_tag(:master_key, @master_key, :required => true) %><br><br>
+    </div>
+    <div class="input_fields">
+      <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input") %>
+      <%= submit_tag("Request", class: "form_submit") %>
+    </div>
+  <% end %>
+</div>
+<div class="input_form">
+  <div class="input_fields">
+    <p><%= @hint unless @hint.nil? %></p>
+    <%= text_field_tag(:password, @password, :readonly => true, :class => "output_field") %><br><br>
+  </div>
+</div>

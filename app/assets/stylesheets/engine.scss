@@ -1,0 +1,66 @@
+// Place all the styles related to the engine controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {color: #7c795d}
+
+.main_title {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: #356240;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 64px;
+    padding: 20px 30px;
+    text-align: center;
+    text-transform: uppercase; 
+}
+
+.input_form {
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+    font-family: sans-serif;
+}
+
+.input_fields {
+    width: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+label {
+    width: 180px;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+
+input {
+    width: 50%;
+    background-image: asset-url("form_bg.jpg");
+    background-repeat: repeat-x;
+    border: 1px solid #d1c7ac;
+    color: #333333;
+    padding: 3px;
+    font-family: tahoma, arial, sans-serif;
+}
+
+.number_input {
+    width: 50px;
+}
+
+.form_submit {
+    width: 250px;
+}
+
+.author {
+    font-size: 12px;
+    text-align: center;
+}
+
+.output_field{
+    text-align: center;
+}
