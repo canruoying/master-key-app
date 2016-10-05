@@ -4,17 +4,15 @@
 .main_title {
     margin-top: 200px;
     margin-bottom: 20px;
-    color: #FFCB00;
-    font-family: 'NowBlack';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 80px;
+    color: #51B3E8;
+    font-family: 'NowLight';
+    font-size: 100px;
     font-weight: 700;
     line-height: 64px;
-    letter-spacing: 8px;
+    letter-spacing: 2px;
     padding: 20px 30px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .input_form {
@@ -53,8 +51,6 @@ label {
     text-align: right;
     vertical-align: top;
     font-family: 'NowMedium';
-    font-weight: normal;
-    font-style: normal;
 }
 
 input {
@@ -65,8 +61,6 @@ input {
     color: #333333;
     padding: 3px;
     font-family: 'NowRegular';
-    font-weight: normal;
-    font-style: normal;
 
     /*Applying CSS 3radius*/
     -moz-border-radius: 3px;
@@ -90,16 +84,12 @@ input {
 
 .author {
     font-family: 'NowLight';
-    font-weight: normal;
-    font-style: normal;
     font-size: 10px;
     text-align: center;
 }
 
 .email {
     font-family: 'NowLight';
-    font-weight: normal;
-    font-style: normal;
     text-align: center;
     font-size: 10px;
 }
@@ -110,14 +100,10 @@ input {
     border: 1px solid black;
     margin-top: 10px;
     font-family: 'SourceCodeProRegular';
-    font-weight: normal;
-    font-style: normal;
 }
 
 .hint{
     font-family: 'NowRegular';
-    font-weight: normal;
-    font-style: normal;
     font-size: 13px;
     line-height: 1.5;
 }
