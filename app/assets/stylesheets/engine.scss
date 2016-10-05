@@ -28,11 +28,18 @@ body {color: #7c795d}
     display: block;
     margin: auto;
     margin-top: 20px;
+}
+
+.output_fields {
+    width: 600px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
     text-align: center;
 }
 
 label {
-    width: 180px;
+    width: 200px;
     display: inline-block;
     text-align: right;
     vertical-align: top;
