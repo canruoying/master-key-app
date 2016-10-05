@@ -8,10 +8,11 @@ class EngineController < ApplicationController
     @password = Generator.generate(@master_key, @salt)
     if @password.nil?
       @hint = "Your password will appear here after filling out all
-       fields above and clicking the Request button."
+       fields above and clicking the Generate button. No information
+       will be stored."
     else
-      @hint = "\##{@counter} password generated for #{@service} using
-       email=#{@email} and a length #{@master_key.length} master key."
+      @hint = "Password generated for #{@service} with email address
+       #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}."
     end
   end
 end

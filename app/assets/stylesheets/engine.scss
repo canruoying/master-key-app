@@ -1,19 +1,20 @@
 // Place all the styles related to the engine controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {color: #7c795d}
-
 .main_title {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    color: #356240;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 64px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    color: #FFCB00;
+    font-family: 'NowBlack';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 80px;
     font-weight: 700;
     line-height: 64px;
+    letter-spacing: 8px;
     padding: 20px 30px;
     text-align: center;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
 
 .input_form {
@@ -30,8 +31,16 @@ body {color: #7c795d}
     margin-top: 20px;
 }
 
+.button_fields {
+    width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .output_fields {
-    width: 600px;
+    width: 450px;
     display: block;
     margin: auto;
     margin-top: 20px;
@@ -39,35 +48,76 @@ body {color: #7c795d}
 }
 
 label {
-    width: 200px;
+    width: 220px;
     display: inline-block;
     text-align: right;
     vertical-align: top;
+    font-family: 'NowMedium';
+    font-weight: normal;
+    font-style: normal;
 }
 
 input {
-    width: 50%;
+    width: 300px;
     background-image: asset-url("form_bg.jpg");
     background-repeat: repeat-x;
     border: 1px solid #d1c7ac;
     color: #333333;
     padding: 3px;
-    font-family: tahoma, arial, sans-serif;
+    font-family: 'NowRegular';
+    font-weight: normal;
+    font-style: normal;
+
+    /*Applying CSS 3radius*/
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    /*Applying CSS3 box shadow*/
+    -moz-box-shadow: 0 0 2px #DDDDDD;
+    -webkit-box-shadow: 0 0 2px #DDDDDD;
+    box-shadow: 0 0 2px #DDDDDD;
 }
 
 .number_input {
-    width: 50px;
+    width: 144px;
+    text-align: center;
 }
 
 .form_submit {
-    width: 250px;
+    width: 308px;
 }
 
 .author {
-    font-size: 12px;
+    font-size: 10px;
+    font-family: 'NowLight';
+    font-weight: normal;
+    font-style: normal;
     text-align: center;
 }
 
-.output_field{
+.email {
+    font-size: 10px;
+    font-family: 'NowLight';
+    font-weight: normal;
+    font-style: normal;
     text-align: center;
+}
+
+.output_box{
+    background: white;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 10px;
+    font-family: 'SourceCodeProRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hint{
+    font-family: 'NowRegular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 1.5;
 }
