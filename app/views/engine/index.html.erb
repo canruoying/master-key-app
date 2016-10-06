@@ -13,12 +13,12 @@
   <div class="one column row">
     <div class="twelve wide column">
       <%= form_tag("", :method => "post", :class => "ui form") do %>
-        <div class="two fields">
-          <div class="field">
+        <div class="fields">
+          <div class="eight wide field">
             <label>site</label>
             <%= text_field_tag(:service, @service, :placeholder => 'facebook.com, cellphone pin', :required => true) %>
           </div>
-          <div class="field">
+          <div class="eight wide field">
             <label>email</label>
             <%= text_field_tag(:email, @email, :placeholder => 'dr_oz@friendster.com', :required => true) %>
           </div>
