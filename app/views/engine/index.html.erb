@@ -4,7 +4,7 @@
       ahchanh
     </h1>
     <h3 class="ui blue header">
-      safe and easy password hashing service
+      safe and easy password generation service
     </h3>
   </div>
 </div>
@@ -45,16 +45,18 @@
           </div>
         </div>
       <% end %>
-      <div class="one column row">
-        <div class="ui center aligned inverted blue padded result segment">
-          <p><%= @hint %></p>
-          <% if !@password.nil? %>
-            <div class="ui tertiary inverted red segment">
-                <%= @password %>
-            </div>
-            <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
-          <% end %>
-        </div>
+    </div>
+  </div>
+  <div class="one column row">
+    <div class="fourteen wide column">
+      <div class="ui center aligned inverted blue padded result segment">
+        <p><%= @hint %></p>
+        <% if !@password.nil? %>
+          <div class="ui tertiary inverted red segment">
+              <%= @password %>
+          </div>
+          <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
+        <% end %>
       </div>
     </div>
   </div>
