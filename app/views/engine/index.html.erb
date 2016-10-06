@@ -11,7 +11,7 @@
 
 <div class="ui centered grid">
   <div class="one column row">
-    <div class="twelve wide column">
+    <div class="fourteen wide column">
       <%= form_tag("", :method => "post", :class => "ui form") do %>
         <div class="fields">
           <div class="eight wide field">
@@ -48,7 +48,7 @@
       <div class="ui center aligned padded result segment">
         <p><%= @hint %></p>
         <% if !@password.nil? %>
-          <div class="ui tertiary inverted red segment">
+          <div class="ui tertiary inverted orange segment">
               <%= @password %>
           </div>
         <% end %>
