@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'engine/index'
   post 'engine/index' => 'engine#index'
+  post '/' => 'engine#index'
 
   root 'engine#index'
 

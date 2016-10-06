@@ -6,6 +6,10 @@ gem 'digest'
 
 gem 'scrypt'
 
+gem 'semantic-ui-rails'
+
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use SCSS for stylesheets

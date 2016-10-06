@@ -1,109 +1,36 @@
 // Place all the styles related to the engine controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.main_title {
-    margin-top: 200px;
-    margin-bottom: 20px;
-    color: #51B3E8;
-    font-family: 'NowLight';
-    font-size: 100px;
-    font-weight: 700;
-    line-height: 64px;
-    letter-spacing: 2px;
-    padding: 20px 30px;
-    text-align: center;
-    text-transform: lowercase;
+
+
+.masthead h1.ui.header {
+  margin-top: 2em;
+  margin-bottom: 0em;
+  font-family: 'GlacialIndifferenceRegular';
+  font-size: 6em;
+  font-weight: normal;
 }
 
-.input_form {
-    margin: auto;
-    margin-top: 50px;
-    width: 80%;
-    font-family: sans-serif;
+.masthead h3.ui.header {
+  margin-top: 0em;
+  margin-bottom: 1.5em;
+  font-family: 'GlacialIndifferenceRegular';
+  font-size: 1.5em;
+  font-weight: normal;
 }
 
-.input_fields {
-    width: 600px;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
+.grid .result.segment {
+  margin-top: 4em;
 }
 
-.button_fields {
-    width: 500px;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
+.footer.grid {
+  min-height: 20em;
 }
 
-.output_fields {
-    width: 450px;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
+.footer .container {
+  margin-top: 10em;
 }
 
-label {
-    width: 220px;
-    display: inline-block;
-    text-align: right;
-    vertical-align: top;
-    font-family: 'NowMedium';
-}
-
-input {
-    width: 300px;
-    background-image: asset-url("form_bg.jpg");
-    background-repeat: repeat-x;
-    border: 1px solid #d1c7ac;
-    color: #333333;
-    padding: 3px;
-    font-family: 'NowRegular';
-
-    /*Applying CSS 3radius*/
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    
-    /*Applying CSS3 box shadow*/
-    -moz-box-shadow: 0 0 2px #DDDDDD;
-    -webkit-box-shadow: 0 0 2px #DDDDDD;
-    box-shadow: 0 0 2px #DDDDDD;
-}
-
-.number_input {
-    width: 144px;
-    text-align: center;
-}
-
-.form_submit {
-    width: 308px;
-}
-
-.author {
-    font-family: 'NowLight';
-    font-size: 10px;
-    text-align: center;
-}
-
-.email {
-    font-family: 'NowLight';
-    text-align: center;
-    font-size: 10px;
-}
-
-.output_box{
-    background: white;
-    text-align: center;
-    border: 1px solid black;
-    margin-top: 10px;
-    font-family: 'SourceCodeProRegular';
-}
-
-.hint{
-    font-family: 'NowRegular';
-    font-size: 13px;
-    line-height: 1.5;
+.footer .container p {
+  font-size: 0.6em;
 }

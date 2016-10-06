@@ -1,23 +1,62 @@
-<div class="main_title">Master Pass</div>
-<div class="input_form">
-  <%= form_tag(method: "post") do %>
-    <div class="input_fields">
-      <%= label_tag(:service, "Website/Service name:") %>
-      <%= text_field_tag(:service, @service, placeholder: 'facebook.com, gmail.com', :required => true) %><br><br>
-      <%= label_tag(:email, "Email address:") %>
-      <%= text_field_tag(:email, @email, placeholder: 'dr_spambot@yahoo.com', :required => true) %><br><br>
-      <%= label_tag(:master_key, "Master key:") %>
-      <%= password_field_tag(:master_key, @master_key, :required => true) %><br><br>
-    </div>
-    <div class="button_fields">
-      <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input") %>
-      <%= submit_tag("Generate", class: "form_submit") %>
-    </div>
-  <% end %>
+<div class="ui masthead centered grid">
+  <div class="ui text container">
+    <h1 class="ui blue header">
+      ahchanh
+    </h1>
+    <h3 class="ui blue header">
+      safe and easy password hashing service
+    </h3>
+  </div>
 </div>
-<div class="input_form">
-  <div class="output_fields">
-    <div class="hint"><%= @hint unless @hint.nil? %></div>
-    <%= text_field_tag(:password, @password, :readonly => true, :class => "output_box") %><br><br>
+
+<div class="ui centered grid">
+  <div class="one column row">
+    <div class="eight wide column">
+      <%= form_tag("", :method => "post", :class => "ui form") do %>
+        <div class="two fields">
+          <div class="field">
+            <label>site</label>
+            <%= text_field_tag(:service, @service, :placeholder => 'facebook.com, cellphone pin', :required => true) %>
+          </div>
+          <div class="field">
+            <label>email</label>
+            <%= text_field_tag(:email, @email, :placeholder => 'dr_oz@friendster.com', :required => true) %>
+          </div>
+        </div>
+        <div class="field">
+          <label>master key</label>
+          <div class="fields">
+            <div class="eight wide field">
+              <%= password_field_tag(:master_key, @master_key, :required => true) %>
+            </div>
+            <div class="three wide field">
+              <%= select_tag(:password_type, options_for_select(@password_types, @password_type)) %>
+            </div>
+            <div class="two wide field">
+              <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input") %>
+            </div>
+            <div class="three wide field">
+              <%= submit_tag("generate", class: "fluid ui primary button") %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="ui center aligned padded result segment">
+        <p><%= @hint %></p>
+        <% if !@password.nil? %>
+          <div class="ui tertiary inverted red segment">
+              <%= @password %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui footer centered grid">
+  <div class="ui centered text container">
+    <p>Canruo Ying</p>
+    <p>canruoying@hotmail.com</p>
+    <p>2016</p>
   </div>
 </div>
