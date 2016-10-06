@@ -19,7 +19,7 @@ class EngineController < ApplicationController
       @@template_pin
     end
 
-    if @service.nil? || @email.nil? || @master_key.nil? || @counter.nil?
+    if @service.nil? || @service == '' || @email.nil? || @email == '' || @master_key.nil? || @master_key == '' || @counter.nil?
        @hint = "Your generated password will appear here after filling out all
        fields above and clicking the generate button. No information
        will be stored."
