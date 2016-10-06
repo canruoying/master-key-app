@@ -30,7 +30,7 @@
           </div>
           <div class="three wide field">
             <label>type</label>
-            <%= select_tag(:password_type, options_for_select(@password_types, @password_type)) %>
+            <%= select_tag(:password_type, options_for_select(@password_types, @password_type), :class => "ui fluid dropdown") %>
           </div>
           <div class="seven wide field">
             <label>counter</label>
