@@ -6,7 +6,7 @@ class EngineController < ApplicationController
     @email = params[:email]
     @counter = params[:counter]
     @password_type = params[:password_type]
-    @salt = "#{@service}#{@email}#{@counter}"
+    @hint = ''
 
     template_set = case @password_type
     when 'normal'
@@ -19,15 +19,23 @@ class EngineController < ApplicationController
       @@template_pin
     end
 
-    @password = Generator.generate(@master_key, @salt, template_set)
-
-    if @password.nil?
-      @hint = "Your generated password will appear here after filling out all
+    if @service.nil? || @email.nil? || @master_key.nil? || @counter.nil?
+       @hint = "Your generated password will appear here after filling out all
        fields above and clicking the generate button. No information
        will be stored."
     else
-      @hint = "Generated a #{@password_type} type password for #{@service} with email address
-       #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}."
+      start_time = Time.now
+      @service = @service.downcase
+      @email = @email.downcase
+      @salt = "#{@service}#{@email}#{@counter}"
+      @password = Generator.generate(@master_key, @salt, template_set)
+      @elapsed_time = (Time.now - start_time) * 1000
+      if @password.nil?
+        @hint = "This was not supposed to happen..."
+      else
+        @hint = "Generated a #{@password_type} type password for #{@service} with email address
+         #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}."
+      end
     end
   end
 

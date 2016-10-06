@@ -36,7 +36,7 @@
             <label>counter</label>
             <div class="two fields">
               <div class="six wide field">
-              <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input") %>
+              <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input", :min => "1") %>
               </div>
               <div class="ten wide field">
               <%= submit_tag("generate", class: "fluid ui primary button") %>
@@ -45,13 +45,16 @@
           </div>
         </div>
       <% end %>
-      <div class="ui center aligned padded result segment">
-        <p><%= @hint %></p>
-        <% if !@password.nil? %>
-          <div class="ui tertiary inverted orange segment">
-              <%= @password %>
-          </div>
-        <% end %>
+      <div class="one column row">
+        <div class="ui center aligned inverted blue padded result segment">
+          <p><%= @hint %></p>
+          <% if !@password.nil? %>
+            <div class="ui tertiary inverted red segment">
+                <%= @password %>
+            </div>
+            <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
