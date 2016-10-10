@@ -1,71 +1,79 @@
-<div class="ui masthead centered grid">
-  <div class="ui text container">
-    <h1 class="ui blue header">
-      ahchanh
-    </h1>
-    <h3 class="ui blue header">
-      safe and easy password generation service
-    </h3>
+<div class="ui fluid container container-header">
+  <div class="ui masthead centered grid">
+    <div class="ui text container">
+      <h1 class="ui blue header">
+        ahchanh
+      </h1>
+      <h3 class="ui blue header">
+        safe and easy password generation service
+      </h3>
+    </div>
   </div>
 </div>
 
-<div class="ui centered grid">
-  <div class="one column row">
-    <div class="fourteen wide column">
-      <%= form_tag("", :method => "post", :class => "ui form") do %>
-        <div class="fields">
-          <div class="eight wide field">
-            <label>site</label>
-            <%= text_field_tag(:service, @service, :placeholder => 'facebook.com, cellphone pin', :required => true) %>
+<div class="ui fluid container container-content">
+  <div class="ui centered grid grid-content">
+    <div class="one column row">
+      <div class="fourteen wide column">
+        <%= form_tag("", :method => "post", :class => "ui form") do %>
+          <div class="two fields">
+            <div class="eight wide field">
+              <label>site</label>
+              <%= text_field_tag(:service, @service, :placeholder => 'facebook.com, cellphone pin', :required => true) %>
+            </div>
+            <div class="eight wide field">
+              <label>email</label>
+              <%= text_field_tag(:email, @email, :placeholder => 'dr_oz@friendster.com', :required => true) %>
+            </div>
           </div>
-          <div class="eight wide field">
-            <label>email</label>
-            <%= text_field_tag(:email, @email, :placeholder => 'dr_oz@friendster.com', :required => true) %>
-          </div>
-        </div>
-        <div class="fields">
-          <div class="eight wide field">
-            <label>master key</label>
-            <%= password_field_tag(:master_key, @master_key, :required => true) %>
-          </div>
-          <div class="three wide field">
-            <label>type</label>
-            <%= select_tag(:password_type, options_for_select(@password_types, @password_type), :class => "ui fluid dropdown") %>
-          </div>
-          <div class="seven wide field">
-            <label>counter</label>
-            <div class="two fields">
-              <div class="six wide field">
-              <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input", :min => "1") %>
-              </div>
-              <div class="ten wide field">
-              <%= submit_tag("generate", class: "fluid ui primary button") %>
+          <div class="three fields">
+            <div class="eight wide field">
+              <label>master key</label>
+              <%= password_field_tag(:master_key, @master_key, :required => true) %>
+            </div>
+            <div class="three wide field">
+              <label>type</label>
+              <%= select_tag(:password_type, options_for_select(@password_types, @password_type), :class => "ui fluid dropdown") %>
+            </div>
+            <div class="five wide field">
+              <label>counter</label>
+              <div class="two fields">
+                <div class="six wide field">
+                <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input", :min => "1") %>
+                </div>
+                <div class="ten wide field">
+                <%= submit_tag("generate", class: "fluid ui primary button") %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <div class="one column row">
-    <div class="fourteen wide column">
-      <div class="ui center aligned inverted blue padded result segment">
-        <p><%= @hint %></p>
-        <% if !@password.nil? %>
-          <div class="ui tertiary inverted red segment">
-              <%= @password %>
-          </div>
-          <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
         <% end %>
+      </div>
+    </div>
+    <div class="one column row">
+      <div class="fourteen wide column">
+        <div class="ui center aligned inverted blue padded result segment">
+          <p><%= @hint %></p>
+          <% if !@password.nil? %>
+            <div class="ui tertiary inverted red segment">
+                <%= @password %>
+            </div>
+            <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="ui footer centered grid">
-  <div class="ui centered text container">
-    <p>Canruo Ying</p>
-    <p>yingcanruo@gmail.com</p>
-    <p>2016</p>
+<div class="ui divider"></div>
+
+<div class="ui fluid container container-footer">
+  <div class="ui footer centered grid">
+    <div class="ui centered text container">
+      <p>Canruo Ying</p>
+      <p>yingcanruo@gmail.com</p>
+      <p>2016</p>
+    </div>
   </div>
 </div>

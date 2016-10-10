@@ -2,9 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .masthead h1.ui.header {
-  margin-top: 1em;
   margin-bottom: 0em;
   font-family: 'GlacialIndifferenceRegular';
   font-size: 4em;
@@ -13,22 +11,23 @@
 
 .masthead h3.ui.header {
   margin-top: 0em;
-  margin-bottom: 2em;
   font-family: 'GlacialIndifferenceRegular';
   font-size: 0.8em;
   font-weight: normal;
 }
 
-.grid .result.segment {
-  margin-top: 4em;
+.container-header {
+  margin-top: 5em;
+  margin-bottom: 0em;  
 }
 
-.footer.grid {
-  min-height: 20em;
+.container-content {
+  margin-top: 3em;
+  margin-bottom: 10em;
 }
 
-.footer .container {
-  margin-top: 10em;
+.container-footer {
+  margin-top: 3em;
 }
 
 .footer .container p {
