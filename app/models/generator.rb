@@ -6,7 +6,7 @@ class Generator < ActiveRecord::Base
   @spechars = '!"\'#$%&()*+,-./:;<=>?@[\\]^_`{|}~'.chars.to_a
 
   def self.generate(word, salt, template_set)
-    return nil if word.nil? || salt.nil?
+    return nil if word.nil? || salt.nil? || template_set.nil?
     key = SCrypt::Engine.scrypt(word.encode('UTF-8'), salt.encode('UTF-8'), 2**15, 8, 2, 64)
     code = Digest::SHA256.hexdigest(key)
     code = Bases.val(code).in_base(16).to_base(10).to_i
@@ -27,6 +27,8 @@ class Generator < ActiveRecord::Base
         encode_letter(password, code, @spechars)
       when 'x'
         encode_letter(password, code, @secure_base)
+      else
+        return "Error due to template character " + i + "!"
       end
     end
     password

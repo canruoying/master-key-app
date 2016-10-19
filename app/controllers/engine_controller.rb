@@ -31,7 +31,8 @@ class EngineController < ApplicationController
       @password = Generator.generate(@master_key, @salt, template_set)
       @elapsed_time = (Time.now - start_time) * 1000
       if @password.nil?
-        @hint = "This was not supposed to happen..."
+        @hint = "This was not supposed to happen... Debug info: #{@password_type} | #{@service} |
+         #{@email} | #{@master_key.length} | #{@counter}."
       else
         @hint = "Generated a #{@password_type} type password for #{@service} with email address
          #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}."
@@ -56,9 +57,9 @@ class EngineController < ApplicationController
   @@template_normal[9] = 'axsnAxxxxx'
   @@template_normal[10] = 'xxsxxxxaAn'
   @@template_normal[11] = 'xxnAxxasxx'
-  @@template_normal[12] = 'axsxxNxxAx'
+  @@template_normal[12] = 'axsxxnxxAx'
   @@template_normal[13] = 'xxxaAxsxxn'
-  @@template_normal[14] = 'xsxNxxaxAx'
+  @@template_normal[14] = 'xsxnxxaxAx'
   @@template_normal[15] = 'xxsxAxaxnx'
 
   @@template_simple[0] = 'aAnnanAn'
