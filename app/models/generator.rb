@@ -1,9 +1,9 @@
 class Generator < ActiveRecord::Base
-  @secure_base = 'AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz0123456789!"\'#$%&()*+,-./:;<=>?@[\\]^_`{|}~'.chars.to_a
+  @secure_base = 'AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz0123456789!#$%+/=@~'.chars.to_a
   @upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.chars.to_a
   @lower = 'abcdefghijklmnopqrstuvwxyz'.chars.to_a
   @numbers = '0123456789'.chars.to_a
-  @spechars = '!"\'#$%&()*+,-./:;<=>?@[\\]^_`{|}~'.chars.to_a
+  @spechars = '!#$%+/=@~'.chars.to_a
 
   def self.generate(word, salt, template_set)
     return nil if word.nil? || salt.nil? || template_set.nil?
