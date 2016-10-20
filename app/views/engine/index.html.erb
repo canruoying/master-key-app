@@ -55,7 +55,7 @@
         <div class="ui center aligned inverted blue padded result segment">
           <p><%= @hint %></p>
           <% if !@password.nil? %>
-            <div class="ui tertiary inverted red segment">
+            <div class="ui tertiary inverted red segment password-display">
                 <%= @password %>
             </div>
             <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
