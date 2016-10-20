@@ -34,7 +34,7 @@ class EngineController < ApplicationController
         @hint = "This was not supposed to happen... Debug info: #{@password_type} | #{@service} |
          #{@email} | #{@master_key.length} | #{@counter}."
       else
-        @hint = "Generated a #{@password_type} type password for #{@service} with email address
+        @hint = "Generated a #{@password_type} type password for #{@service} with username
          #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}."
       end
     end
@@ -47,7 +47,7 @@ class EngineController < ApplicationController
 
   @@template_normal[0] = 'aAnxaaAxsa'
   @@template_normal[1] = 'nanAxsxaAn'
-  @@template_normal[2] = 'aAaAsxxxaa'
+  @@template_normal[2] = 'aAaAsnnxaa'
   @@template_normal[3] = 'xaAxnsaAnx'
   @@template_normal[4] = 'naxsaaAxAn'
   @@template_normal[5] = 'aAAaxAxsnx'
