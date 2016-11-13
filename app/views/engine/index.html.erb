@@ -33,15 +33,15 @@
             </div>
             <div class="three wide field">
               <label>type</label>
-              <%= select_tag(:password_type, options_for_select(@password_types, @password_type)) %>
+              <%= select_tag(:password_type, options_for_select(@password_types, @password_type), class: "fluid") %>
             </div>
             <div class="five wide field">
               <label>counter</label>
               <div class="two fields">
-                <div class="six wide field">
-                <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input", :min => "1") %>
+                <div class="eight wide field">
+                  <%= number_field_tag(:counter, @counter || 1, :required => true, :class => "number_input", :min => "1") %>
                 </div>
-                <div class="ten wide field">
+                <div class="eight wide field">
                 <%= submit_tag("generate", class: "fluid ui primary button") %>
                 </div>
               </div>
@@ -77,3 +77,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#password_type').dropdown();
+</script>
