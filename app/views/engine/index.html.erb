@@ -55,10 +55,13 @@
         <div class="ui center aligned inverted blue padded result segment">
           <p><%= @hint %></p>
           <% if !@password.nil? %>
-            <div class="ui tertiary inverted red segment password-display">
-                <%= @password %><br>
-                <button class="ui button" data-clipboard-text="<%= @password %>">Copy
-                </button>
+            <div class="ui left labeled button" tabindex="0">
+              <a class="ui basic right pointing label">
+                <%= @password %>
+              </a>
+              <div id="copy_button" class="ui button" data-clipboard-text="<%= @password %>">
+                <i class="clone icon"></i> Copy
+              </div>
             </div>
             <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
           <% end %>
@@ -88,7 +91,7 @@
   // Popup
 
   function setTooltip(message) {
-    $('.ui button')
+    $('#copy_button')
       .popup({
         on        : 'click',
         position  : 'bottom left',
@@ -99,14 +102,14 @@
 
   function hideTooltip() {
     setTimeout(function() {
-      $('.ui button')
+      $('#copy_button')
         .popup('hide')
     }, 500);
   }
 
   // Clipboard
 
-  var clipboard = new Clipboard('.ui button');
+  var clipboard = new Clipboard('#copy_button');
 
   clipboard.on('success', function(e) {
     setTooltip('Copied!');
