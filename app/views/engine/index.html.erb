@@ -56,7 +56,9 @@
           <p><%= @hint %></p>
           <% if !@password.nil? %>
             <div class="ui tertiary inverted red segment password-display">
-                <%= @password %>
+                <%= @password %><br>
+                <button class="ui button" data-clipboard-text="<%= @password %>">Copy
+                </button>
             </div>
             <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
           <% end %>
@@ -79,5 +81,41 @@
 </div>
 
 <script>
+  // Dropdown
+
   $('#password_type').dropdown();
+
+  // Popup
+
+  function setTooltip(message) {
+    $('.ui button')
+      .popup({
+        on        : 'click',
+        position  : 'bottom left',
+        })
+      .attr('data-content', message)
+      .popup('show');
+  }
+
+  function hideTooltip() {
+    setTimeout(function() {
+      $('.ui button')
+        .popup('hide')
+    }, 500);
+  }
+
+  // Clipboard
+
+  var clipboard = new Clipboard('.ui button');
+
+  clipboard.on('success', function(e) {
+    setTooltip('Copied!');
+    hideTooltip();
+  });
+
+  clipboard.on('error', function(e) {
+    setTooltip('Failed!');
+    hideTooltip();
+  });
+
 </script>
