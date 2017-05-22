@@ -13,7 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require semantic
-//= require components/dropdown
-//= require clipboard.min
 //= require_tree .
