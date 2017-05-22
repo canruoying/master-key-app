@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require semantic/dist/semantic
-//= require clipboard/dist/clipboard.min
+//= require semantic
+//= require clipboard.min
 //= require_tree .
