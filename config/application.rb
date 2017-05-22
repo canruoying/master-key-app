@@ -24,8 +24,6 @@ module MasterKeyApp
     config.active_record.raise_in_transactional_callbacks = true
     # Include Bower components in compiled assets
     config.assets.enabled = true
-    config.assets.paths << Rails.root.join("app", "assets", "semantic", "dist")
-    config.assets.paths << Rails.root.join("app", "assets", "clipboard", "dist")
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.assets.paths << Rails.root.join("app", "assets", "images")
   end
 end
