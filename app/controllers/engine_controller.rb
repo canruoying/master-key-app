@@ -35,7 +35,8 @@ class EngineController < ApplicationController
          #{@email} | #{@master_key.length} | #{@counter}."
       else
         @hint = "Generated a #{@password_type} type password for #{@service} with username
-         #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}."
+         #{@email} and a length #{@master_key.length} master key. The counter is at #{@counter}.
+         Algorithm runtime: #{@elapsed_time.round(2)} ms."
       end
     end
   end

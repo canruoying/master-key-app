@@ -29,7 +29,7 @@
           <div class="three fields">
             <div class="eight wide field">
               <label>master key</label>
-              <%= password_field_tag(:master_key, @master_key, :required => true) %>
+              <%= password_field_tag(:master_key, @master_key, :required => true, id: 'master_key') %>
             </div>
             <div class="three wide field">
               <label>type</label>
@@ -52,18 +52,24 @@
     </div>
     <div class="one column row">
       <div class="fourteen wide column">
-        <div class="ui center aligned inverted blue padded result segment">
+        <div class="ui center aligned inverted blue padded segment">
           <p><%= @hint %></p>
           <% if !@password.nil? %>
+          <div id="password_container" class="ui center aligned inverted orange padded segment">
             <div class="ui left labeled button" tabindex="0">
               <a class="ui basic right pointing label">
                 <%= @password %>
               </a>
               <div id="copy_button" class="ui button" data-clipboard-text="<%= @password %>">
-                <i class="clone icon"></i> Copy
+                <i class="clone icon"></i> copy
               </div>
             </div>
-            <p><%= "algorithm runtime: #{@elapsed_time.round(2)} ms" unless @elapsed_time.nil? %></p>
+            <br>
+            <div class="ui checked checkbox">
+              <input type="checkbox" id="clear_page_checkbox" checked="">
+              <label style="color:white">clear the password from the browser after pressing the copy button</label>
+            </div>
+          </div>
           <% end %>
         </div>
       </div>
@@ -98,13 +104,20 @@
         })
       .attr('data-content', message)
       .popup('show');
+      setTimeout(function() {
+      $('#copy_button')
+        .popup('hide');
+    }, 500);
   }
 
-  function hideTooltip() {
+  function clearPassword() {
+
     setTimeout(function() {
-      $('#copy_button')
-        .popup('hide')
-    }, 500);
+      var child = document.getElementById("password_container");
+      var parent = child.parentNode;
+      parent.removeChild(child);
+      $("#master_key").val("");
+    }, 1000);
   }
 
   // Clipboard
@@ -113,12 +126,12 @@
 
   clipboard.on('success', function(e) {
     setTooltip('Copied!');
-    hideTooltip();
+    if (document.getElementById("clear_page_checkbox").checked)
+    clearPassword();
   });
 
   clipboard.on('error', function(e) {
     setTooltip('Failed!');
-    hideTooltip();
   });
 
 </script>
