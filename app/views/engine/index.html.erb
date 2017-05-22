@@ -56,19 +56,24 @@
           <p><%= @hint %></p>
           <% if !@password.nil? %>
           <div id="password_container" class="ui center aligned inverted orange padded segment">
-            <div class="ui left labeled button" tabindex="0">
-              <a class="ui basic right pointing label">
-                <%= @password %>
-              </a>
-              <div id="copy_button" class="ui button" data-clipboard-text="<%= @password %>">
-                <i class="clone icon"></i> copy
+            <form class="ui form">
+              <div class="field">
+                <div class="ui left labeled button" tabindex="0">
+                  <a class="ui basic right pointing label">
+                    <%= @password %>
+                  </a>
+                  <div id="copy_button" class="ui button" data-clipboard-text="<%= @password %>">
+                    <i class="clone icon"></i> copy
+                  </div>
+                </div>
               </div>
-            </div>
-            <br>
-            <div class="ui checked checkbox">
-              <input type="checkbox" id="clear_page_checkbox" checked="">
-              <label style="color:white">clear the password from the browser after pressing the copy button</label>
-            </div>
+              <div class="field">
+                <div class="ui checked checkbox">
+                  <input type="checkbox" id="clear_page_checkbox" checked="">
+                  <label style="color:white">clear the password from the browser after pressing the copy button</label>
+                </div>
+              </div>
+            </form>
           </div>
           <% end %>
         </div>
