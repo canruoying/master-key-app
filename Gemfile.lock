@@ -225,7 +225,7 @@ PLATFORMS
 
 DEPENDENCIES
   bases
-  bootsnap (>= 1.4.4)
+  bootsnap
   bower-rails
   byebug
   capybara (>= 3.26)
