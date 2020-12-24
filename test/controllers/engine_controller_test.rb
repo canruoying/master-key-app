@@ -1,9 +1,7 @@
-require 'test_helper'
+require "test_helper"
 
-class EngineControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
-
+class EngineControllerTest < ActionDispatch::IntegrationTest
+  # test "the truth" do
+  #   assert true
+  # end
 end

@@ -1,0 +1,45 @@
+/* line 5, app/assets/stylesheets/engine.scss */
+.masthead h1.ui.header {
+  margin-bottom: 0em;
+  font-family: 'GlacialIndifferenceRegular';
+  font-size: 4em;
+  font-weight: normal;
+}
+
+/* line 12, app/assets/stylesheets/engine.scss */
+.masthead h3.ui.header {
+  margin-top: 0em;
+  font-family: 'GlacialIndifferenceRegular';
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+/* line 19, app/assets/stylesheets/engine.scss */
+.container-header {
+  margin-top: 5em;
+  margin-bottom: 0em;
+}
+
+/* line 24, app/assets/stylesheets/engine.scss */
+.container-content {
+  margin-top: 3em;
+  margin-bottom: 10em;
+}
+
+/* line 29, app/assets/stylesheets/engine.scss */
+.container-footer {
+  margin-top: 3em;
+}
+
+/* line 33, app/assets/stylesheets/engine.scss */
+.footer .container p {
+  font-size: 0.6em;
+  line-height: 0.9em;
+}
+
+/* line 38, app/assets/stylesheets/engine.scss */
+.password-display {
+  font-family: 'CourierCodeRoman';
+  font-weight: normal;
+  font-style: normal;
+}
