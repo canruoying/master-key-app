@@ -28,7 +28,7 @@ class EngineController < ApplicationController
       @service = @service.downcase
       @email = @email.downcase
       @salt = "#{@service}#{@email}#{@counter}"
-      @password = Generator.generate(@master_key, @salt, template_set)
+      @password = helpers.generate(@master_key, @salt, template_set)
       @elapsed_time = (Time.now - start_time) * 1000
       if @password.nil?
         @hint = "This was not supposed to happen... Debug info: #{@password_type} | #{@service} |
